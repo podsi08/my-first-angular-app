@@ -1,0 +1,22 @@
+<div class="directivesContainer">
+  <div>
+    <span>Name:</span>
+    <span *ngIf="showName">Ola</span>
+  </div>
+  <div class="green" *ngIf="showName; else elseblock">Ola</div>
+  <ng-template #elseblock>
+    <div>Name is hidden</div>
+  </ng-template>
+  <p [ngStyle]="{color: getDynamicColor(), backgroundColor: 'yellow'}">Dynamic style</p>
+  <p [ngClass]="{'big': showName}">Example of ngclass</p>
+  <button (click)="toggleNameVisibility()">Show/hide name</button>
+  <h2>Fruits list:</h2>
+  <li *ngFor="let name of fruitsList">{{name}}</li>
+  <input [(ngModel)]="currentFruitName">
+  <button
+    (click)="addToFruitsList(currentFruitName)"
+    [ngClass]="{'pink': fruitsList.length > 2}"
+    [ngStyle]="{backgroundColor: fruitsList.length > 2 ? 'yellow' : 'blue'}"
+  >Add</button>
+  <li *ngFor="let name of fruitsList; let i = index" [ngStyle]="{backgroundColor: i > 3 && 'green'}">{{name}}</li>
+</div>

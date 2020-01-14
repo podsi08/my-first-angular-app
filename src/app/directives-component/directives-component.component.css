@@ -1,0 +1,17 @@
+.directivesContainer {
+  border: 1px solid orange;
+  margin-top: 20px;
+}
+
+.green {
+  background-color: yellowgreen;
+  color: darkgreen;
+}
+
+.big {
+  font-size: 30px;
+}
+
+.pink {
+  color: pink;
+}
